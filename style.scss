@@ -1,0 +1,17 @@
+@import 'node_modules/foundation-sites/scss/foundation';
+@include foundation-global-styles;
+@include foundation-grid;
+
+$primary-font: 'Oswald', sans-serif;
+$secondary-font: 'Raleway', sans-serif;
+
+@import 'layout';
+@import 'header';
+@import 'menu';
+
+
+
+body {
+    // background-image: url('https://static1.squarespace.com/static/5759eb66f850825cdd4defba/t/57676651be659449f9856a6e/1466394218668/publicantable_sandy+noto-1.jpg');
+    background-repeat: no-repeat;
+}

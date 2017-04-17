@@ -1,0 +1,23 @@
+.menu {
+    @include grid-row();
+    .item {
+        @include grid-column(6);
+    }
+}
+
+@media (min-width: 500px) {
+    .menu {
+    @include grid-row();
+        .item {
+            @include grid-column(4);
+         }
+    }
+}
+@media (min-width: 900px) {
+    .menu {
+    @include grid-row();
+        .item {
+            @include grid-column(3);
+         }
+    }
+}
