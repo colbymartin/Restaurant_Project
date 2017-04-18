@@ -24,6 +24,10 @@ function makeItems (menuList) {
         push.addEventListener('load', function () {
             console.log('message received');
         });
+        let order = document.querySelector('.cart');
+        let orderItem = document.createElement('p');
+        orderItem.textContent = menuList.name;
+        order.appendChild(orderItem);
         push.send(JSON.stringify({
             table_id: "Colby",
             menu_id: menuList.id, 

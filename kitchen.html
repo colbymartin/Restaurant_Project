@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="kitch.js"></script>
+
+    <script type="x-mustache-template" id="menu-template">
+        <h4 class="title">{{ name }}</h4>
+        <p class="avail">Available: {{ availability }}</p>
+        <button class="makeAvail">Change Availability</button>
+    </script>
+    <script type="x-mustache-template" id="order-template">
+        <p class="tableID">Table ID: {{table_id}}</p>
+        <ul>
+            {{#items}}
+                <li>{{name}}</li>
+            {{/items}}
+        </ul>
+        <p class="progress">In Progress: {{in_progress}}</p>
+        <button class="markComplete">Mark Complete</button>
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Carmine's Kitchen Portal</h1>
+    </header>
+    <main>
+        <section class="menu">
+        </section>
+        <section  class="cart">
+            <h2>Order Queue</h2>
+        </section>
+    </main>
+
+</body>
+
+</html>
