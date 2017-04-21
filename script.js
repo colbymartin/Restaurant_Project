@@ -1,23 +1,16 @@
 function makeItems (menuList) {
+    let template= document.querySelector('#menu-template').innerHTML;
     let parent = document.querySelector('.menu');
-    let item = document.createElement('div');
-    item.classList.add('item');
-
-    let title = document.createElement('h4');
-    title.classList.add('title');
-    title.textContent = menuList.name;
-
-    let description = document.createElement('p');
-    description.classList.add('description');
-    description.textContent = menuList.description;
-
-    let price = document.createElement('p');
-    price.classList.add('price');
-    price.textContent = menuList.price;
-
-    let orderBtn = document.createElement('button');
-    orderBtn.classList.add('order');
-    orderBtn.textContent = 'Add to Order';
+    let container = document.createElement('div');
+    container.classList.add('item');
+    
+    container.innerHTML = Mustache.render(template, {
+        name: menuList.name,
+        description: menuList.description,
+        price: menuList.price,
+    });
+    
+    let orderBtn = container.querySelector('.order');
     orderBtn.addEventListener('click', function () {
         let push = new XMLHttpRequest();
         push.open('POST', 'http://tiy-28202.herokuapp.com/order');
@@ -26,7 +19,7 @@ function makeItems (menuList) {
         });
         let order = document.querySelector('.cart');
         let orderItem = document.createElement('p');
-        orderItem.textContent = menuList.name;
+        orderItem.textContent = "~" + menuList.name + '~';
         order.appendChild(orderItem);
         push.send(JSON.stringify({
             table_id: "Colby",
@@ -35,12 +28,7 @@ function makeItems (menuList) {
 
     });
 
-
-    item.appendChild(title);
-    item.appendChild(description);
-    item.appendChild(price);
-    item.appendChild(orderBtn);
-    parent.appendChild(item);
+    parent.appendChild(container);
 };
 
 function getItems() {
@@ -60,6 +48,4 @@ pull.send();
 
 window.addEventListener('load', function () {
     getItems();
-
-
 });

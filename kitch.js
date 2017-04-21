@@ -2,6 +2,7 @@ function makeItems(menulist) {
     let template = document.querySelector('#menu-template').innerHTML;
     let parent = document.querySelector('.menu');
     let container = document.createElement('div');
+    container.classList.add('item');
 
     container.innerHTML = Mustache.render(template, {
         name: menulist.name,
@@ -49,7 +50,7 @@ function transposeOrders(orderlist) {
     let compBtn = container.querySelector('.markComplete');
     compBtn.addEventListener('click', function () {
         let push = new XMLHttpRequest();
-        push.open('POST', 'http://tiy-28202.herokuapp.com/order/' + orderlist.id);
+        push.open('POST', 'http://tiy-28202.herokuapp.com/order/' + orderlist.table_id);
         push.addEventListener('load', function () {
             console.log('message received');
         });
@@ -61,7 +62,7 @@ function transposeOrders(orderlist) {
         }));
     });
     parent.appendChild(container);
-};
+}; 
 
 function getOrders() {
     let pull = new XMLHttpRequest();
