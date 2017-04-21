@@ -1,3 +1,10 @@
+function getTotal(order) {
+    let total = 0;
+    for (let i = 0; i < order.items.length; i++) {
+        total = total + order.items[i].price;
+    };
+    return total;;
+};
 function getOrders() {
     let pull = new XMLHttpRequest();
     pull.open('GET', 'http://tiy-28202.herokuapp.com/order');
@@ -17,27 +24,26 @@ function getOrders() {
             get.open('GET', 'http://tiy-28202.herokuapp.com/bill?table_id=' + dropdown.value);
             get.addEventListener('load', function () {
                 let bill = JSON.parse(get.responseText);
-                console.log(bill);
-                for (let i = 0; i < get.length; i++) {
-                    let orderTemp = document.querySelector('#tableOrder-template').innerHTML;
-                    let cart = document.querySelector('.cart');
-                    let billItem = document.createElement('div');
-                    billItem.innerHTML = Mustache.render(orderTemp, {
-                        name: bill.items[i].name,
-                        price: bill.items[i].name,
-                    });
-                    cart.appendChild(billItem);
-                };
+                let orderTemp = document.querySelector('#tableOrder-template').innerHTML;
+                let checkout = document.querySelector('.checkout');
+                let billItem = document.createElement('div');
+                billItem.innerHTML = Mustache.render(orderTemp, bill);
+                let TotalSctn = document.querySelector('.total');
+                let billTotal = document.createElement('p');
+                billTotal.textContent = getTotal(bill).toFixed(2);
+                checkout.appendChild(billItem);
+                TotalSctn.appendChild(billTotal);
+                let pay = document.querySelector('.hidden');
+                pay.classList.remove('hidden');
+                let label = document.querySelector('label');
+                label.classList.add('hidden');  
             });
             get.send();
-
         });
         parent.appendChild(container);
-
     });
     pull.send();
 };
-
 
 window.addEventListener('load', function () {
     getOrders();

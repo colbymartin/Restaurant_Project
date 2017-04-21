@@ -17,9 +17,11 @@
         </select>
     </script>
     <script type="x-mustache-template" id="tableOrder-template">
-        <p>{{name}}</p>
-        <p>{{price}}</p>
+        {{#items}}
+            <p>{{name}} ... ${{price}}</p>
+        {{/items}}
     </script>
+
 </head>
 
 <body>
@@ -29,8 +31,27 @@
     <main>
         <label>
         </label>
-        <section class="cart">
+        <section class="total">
         </section>
+        <section class="checkout">
+        </section>
+        <div class="payment hidden">
+            <ul>
+                <li>
+                    <p>Full Name</p>
+                    <input value="Name as Appears on Card">
+                </li>
+                <li>
+                    <p>Card Number</p>
+                    <input value='card'>
+                </li>
+                <li>
+                    <p>Email Address</p>
+                    <input>
+                </li>
+            </ul>
+            <button class="btn">Submit Payment</button>
+        </div>
     </main>
 </body>
 

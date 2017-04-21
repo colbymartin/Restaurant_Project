@@ -1449,8 +1449,9 @@ nav {
     text-align: center; }
 
 .cart {
-  text-align: center;
-  border: 1px solid black; }
+  text-align: center; }
+  .cart div {
+    text-align: center; }
   .cart ul {
     list-style: none;
     text-align: center;
@@ -1479,6 +1480,51 @@ nav {
     border-radius: 50px;
     padding: 5px 10px 5px 10px;
     margin-bottom: 15px; }
+
+main {
+  max-width: 75rem;
+  margin-right: auto;
+  margin-left: auto; }
+  main::before, main::after {
+    display: table;
+    content: ' '; }
+  main::after {
+    clear: both; }
+  main .checkout {
+    width: 33.33333%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem; }
+    @media print, screen and (min-width: 40em) {
+      main .checkout {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    main .checkout:last-child:not(:first-child) {
+      float: right; }
+  main .payment {
+    width: 66.66667%;
+    float: left;
+    padding-right: 0.625rem;
+    padding-left: 0.625rem;
+    border: 4px solid white;
+    margin-top: 20px; }
+    @media print, screen and (min-width: 40em) {
+      main .payment {
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem; } }
+    main .payment:last-child:not(:first-child) {
+      float: right; }
+    main .payment ul {
+      list-style-type: none; }
+    main .payment .btn {
+      font-family: "Oswald", sans-serif;
+      border: 1px solid black;
+      border-radius: 50px;
+      padding: 5px 10px 5px 10px;
+      margin-bottom: 15px; }
+
+.hidden {
+  display: none; }
 
 body {
   background-image: url("https://static1.squarespace.com/static/5759eb66f850825cdd4defba/578312c7d482e940edd020ea/57831560d2b857a8dd9acf9b/1468208487723/background2-1.jpg?format=2500w");
