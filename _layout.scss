@@ -1,24 +1,50 @@
+div {
+    @include grid-row();
+    float: left;
+    .viewchng {
+        @include grid-column(1);
+        @include grid-column-offset(5);
+    }
+    .ckout {
+        @include grid-column(1);
+    }
+}
 .menu {
     @include grid-row();
     .item {
         @include grid-column(6);
     }
 }
+@media (min-width: 765px) {
+    main {
+        @include grid-row();
+        .cart {
+            @include grid-column(2);
+        }
+        .menu {
+            @include grid-column(10);
+            @include grid-row();
+            .item {
+                @include grid-column(4);
+            }
+        }
 
-
-@media (min-width: 500px) {
-    .menu {
-    @include grid-row();
-        .item {
-            @include grid-column(4);
-         }
     }
 }
+
 @media (min-width: 900px) {
-    .menu {
-    @include grid-row();
-        .item {
-            @include grid-column(3);
-         }
+    main {
+        @include grid-row();
+        .cart {
+            @include grid-column(2);
+        }
+        .menu {
+            @include grid-column(10);
+            @include grid-row();
+            .item {
+                @include grid-column(3);
+            }
+        }
+
     }
 }

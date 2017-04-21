@@ -1,0 +1,37 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+    <script src="checkout.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+    <script type="x-mustache-template" id="dropdown-template">
+        <select size="1" name="choose-order">
+                <option value ="">Select Your Table's Order</option>
+                {{#orders}}
+                    <option value="{{table_id}}">{{table_id}}</option>
+                {{/orders}}        
+        </select>
+    </script>
+    <script type="x-mustache-template" id="tableOrder-template">
+        <p>{{name}}</p>
+        <p>{{price}}</p>
+    </script>
+</head>
+
+<body>
+     <header>
+        <h1>Checkout</h1>
+    </header>
+    <main>
+        <label>
+        </label>
+        <section class="cart">
+        </section>
+    </main>
+</body>
+
+</html>

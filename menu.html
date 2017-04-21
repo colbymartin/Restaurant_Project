@@ -3,21 +3,32 @@
 <html>
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+    <script type="x-mustache-template" id="menu-template">
+        <h4 class="title">{{ name }}</h4>
+        <p class="description">{{ description }}</p>
+        <p class="price">{{ price }}</p>
+        <button class="order btn">Add to Order</button>
+    </script>
 </head>
 
 <body>
     <header>
         <h1>Carmine's: A Place for Steaks</h1>
     </header>
-
+    <!--<div> 
+        <a href="/Users/colbymartin/Desktop/tiy/Restaurant_Project/public/kitchen.html">Kitchen View</a>
+        <a href="google.com">Checkout</a>
+    </div>-->
     <main>
+        <section class="menu">
+        </section>
         <section  class="cart">
             <h3>Your Order</h3>
-        </section>
-        <section class="menu">
         </section>
     </main>
 </body>

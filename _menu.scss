@@ -1,9 +1,9 @@
 .menu {
     .item {
-        border: 1px solid black;
         text-align: center;
         .title {
             font-family: $primary-font;
+            font-size: 1.2em;
         }
         .description {
             font-family: $secondary-font;
@@ -11,7 +11,7 @@
         .price {
             font-family: $secondary-font;
         }
-        .order {
+        .btn {
             font-family: $primary-font;
             border: 1px solid black;
             border-radius: 50px;
