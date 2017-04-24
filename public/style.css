@@ -1261,8 +1261,7 @@ pre {
 div {
   max-width: 75rem;
   margin-right: auto;
-  margin-left: auto;
-  float: left; }
+  margin-left: auto; }
   div::before, div::after {
     display: table;
     content: ' '; }
@@ -1450,8 +1449,15 @@ nav {
 
 .cart {
   text-align: center; }
+  .cart a {
+    text-decoration-line: none;
+    color: black; }
+  .cart h2 {
+    font-family: "Oswald", sans-serif; }
   .cart div {
     text-align: center; }
+    .cart div .tableID {
+      font-weight: bolder; }
   .cart ul {
     list-style: none;
     text-align: center;
@@ -1490,24 +1496,38 @@ main {
     content: ' '; }
   main::after {
     clear: both; }
-  main .checkout {
+  main .dropdown {
+    text-align: center; }
+    main .dropdown select {
+      width: 75%;
+      margin-top: 40px;
+      height: 50px;
+      font-size: 35px;
+      font-style: "Raleway", sans-serif; }
+  main .totCkout {
     width: 33.33333%;
     float: left;
     padding-right: 0.625rem;
     padding-left: 0.625rem; }
     @media print, screen and (min-width: 40em) {
-      main .checkout {
+      main .totCkout {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem; } }
-    main .checkout:last-child:not(:first-child) {
+    main .totCkout:last-child:not(:first-child) {
       float: right; }
+    main .totCkout .total {
+      width: 100%;
+      font-weight: bolder; }
+    main .totCkout .checkout h2 {
+      font-family: "Oswald", sans-serif; }
   main .payment {
-    width: 66.66667%;
+    width: 50%;
     float: left;
     padding-right: 0.625rem;
     padding-left: 0.625rem;
     border: 4px solid white;
-    margin-top: 20px; }
+    margin-top: 20px;
+    text-align: right; }
     @media print, screen and (min-width: 40em) {
       main .payment {
         padding-right: 0.9375rem;
@@ -1515,16 +1535,32 @@ main {
     main .payment:last-child:not(:first-child) {
       float: right; }
     main .payment ul {
-      list-style-type: none; }
+      list-style-type: none;
+      padding: 0;
+      text-align: center; }
+      main .payment ul li {
+        width: 85%; }
+        main .payment ul li p {
+          margin: 10px 0px 10px 0px;
+          text-align: left; }
+        main .payment ul li input {
+          width: 85%;
+          text-align: left; }
     main .payment .btn {
       font-family: "Oswald", sans-serif;
       border: 1px solid black;
       border-radius: 50px;
       padding: 5px 10px 5px 10px;
-      margin-bottom: 15px; }
+      margin: 15px 0px 15px 0px; }
 
 .hidden {
   display: none; }
+
+.pass {
+  border: 3px solid green; }
+
+.fail {
+  border: 3px solid red; }
 
 body {
   background-image: url("https://static1.squarespace.com/static/5759eb66f850825cdd4defba/578312c7d482e940edd020ea/57831560d2b857a8dd9acf9b/1468208487723/background2-1.jpg?format=2500w");

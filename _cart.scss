@@ -1,7 +1,17 @@
 .cart {
     text-align: center;
+    a {
+        text-decoration-line: none;
+        color: black;
+    }
+    h2 {
+        font-family: $primary-font;
+    }
     div {
         text-align: center;
+        .tableID {
+            font-weight: bolder;
+        }
     }
     ul {
         list-style: none;

@@ -1,6 +1,5 @@
 div {
     @include grid-row();
-    float: left;
     .viewchng {
         @include grid-column(1);
         @include grid-column-offset(5);

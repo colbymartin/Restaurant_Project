@@ -29,25 +29,28 @@
         <h1>Checkout</h1>
     </header>
     <main>
-        <label>
+        <label class="dropdown">
         </label>
-        <section class="total">
-        </section>
-        <section class="checkout">
+        <section class="totCkout">
+            <div class="checkout hidden">
+                <h2>Order Details<h2>
+            </div>
+            <div class="total">
+            </div>
         </section>
         <div class="payment hidden">
             <ul>
                 <li>
                     <p>Full Name</p>
-                    <input value="Name as Appears on Card">
+                    <input class="payName">
                 </li>
                 <li>
                     <p>Card Number</p>
-                    <input value='card'>
+                    <input class="payNumber">
                 </li>
                 <li>
                     <p>Email Address</p>
-                    <input>
+                    <input class="payEmail">
                 </li>
             </ul>
             <button class="btn">Submit Payment</button>

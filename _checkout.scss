@@ -1,21 +1,54 @@
 main {
     @include grid-row();
-    .checkout {
+    .dropdown {
+        text-align: center;
+        select {
+            width: 75%;
+            margin-top: 40px;
+            height: 50px;
+            font-size: 35px;
+            font-style: $secondary-font;
+        }
+    }
+    .totCkout {
         @include grid-column(4);
+        .total {
+            width: 100%;
+            font-weight: bolder;
+        }
+        .checkout {
+            h2 {
+                font-family: $primary-font;
+            }
+        }
     }
     .payment {
-        @include grid-column(8);
+        @include grid-column(6);
         border: 4px solid white;
         margin-top: 20px;
+        text-align: right;
         ul {
             list-style-type: none;
+            padding: 0;
+            text-align: center;
+            li {
+                width: 85%;
+                p {
+                    margin: 10px 0px 10px 0px;
+                    text-align: left;
+                }
+                input {
+                    width: 85%;
+                    text-align: left;
+                }
+            }
         }
         .btn {
             font-family: $primary-font;
             border: 1px solid black;
             border-radius: 50px;
             padding: 5px 10px 5px 10px;
-            margin-bottom: 15px;    
+            margin: 15px 0px 15px 0px;    
         }
     }
 }
@@ -23,4 +56,11 @@ main {
 
 .hidden {
     display: none;  
+}
+
+.pass {
+    border: 3px solid green;
+}
+.fail {
+    border: 3px solid red;
 }

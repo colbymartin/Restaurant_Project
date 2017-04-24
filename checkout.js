@@ -30,9 +30,11 @@ function getOrders() {
                 billItem.innerHTML = Mustache.render(orderTemp, bill);
                 let TotalSctn = document.querySelector('.total');
                 let billTotal = document.createElement('p');
-                billTotal.textContent = getTotal(bill).toFixed(2);
+                billTotal.textContent = 'Total:  ' + getTotal(bill).toFixed(2);
                 checkout.appendChild(billItem);
                 TotalSctn.appendChild(billTotal);
+                let OrderSum = document.querySelector('.checkout');
+                OrderSum.classList.remove('hidden');
                 let pay = document.querySelector('.hidden');
                 pay.classList.remove('hidden');
                 let label = document.querySelector('label');
@@ -45,6 +47,30 @@ function getOrders() {
     pull.send();
 };
 
+function validTest(pass) {
+    let valid = new RegExp('^[0-9]{4}[ ]{0,1}[0-9]{4}[ ]{0,1}[0-9]{4}[ ]{0,1}[0-9]{4}[ ]{0,1}$');
+
+    if (valid.test(pass)) {
+        return 'pass';
+    } else {
+        return 'fail';
+    }
+};
+
 window.addEventListener('load', function () {
     getOrders();
+
+    let payNumber = document.querySelector('.payNumber');
+    payNumber.addEventListener('keyup', function () {
+        let valid = validTest(payNumber.value);
+
+        payNumber.classList.remove('fail');
+        payNumber.classList.remove('pass');
+
+        if (valid === 'pass') {
+            payNumber.classList.add('pass');
+        } else if (valid === 'fail'){
+            payNumber.classList.add('fail');
+        }
+    });
 });
